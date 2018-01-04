@@ -1,6 +1,6 @@
 {
   "name": "ajiax",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "node simple request",
   "main": "index.js",
   "scripts": {

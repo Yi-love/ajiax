@@ -155,7 +155,7 @@ function requestPromise(options) {
 
         //请求出错
         req.on('error', (err) => {
-            return reject(handlerError(Object.assign({} , res , {message:err}) , options.resolveWithFullResponse));
+            return reject(handlerError(Object.assign({} , err) , options.resolveWithFullResponse));
         });
         
         //post写数据
