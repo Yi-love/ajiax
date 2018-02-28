@@ -1,11 +1,15 @@
 # Ajiax
 node simple request.
 
+```
+npm install --save @cray/ajiax
+```
 
 ## use
 
+
 ```js
-const ajiax = require('ajiax');
+const ajiax = require('@cray/ajiax');
 
 ajiax.get();
 ajiax.post();

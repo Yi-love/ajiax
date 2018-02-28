@@ -1,6 +1,6 @@
 {
-  "name": "ajiax",
-  "version": "1.0.2",
+  "name": "@cray/ajiax",
+  "version": "1.0.3",
   "description": "node simple request",
   "main": "index.js",
   "scripts": {
