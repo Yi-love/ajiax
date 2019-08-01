@@ -17,26 +17,21 @@ ajiax.post();
 
 return `Promise`.
 
-> please don't use this download max size file.
+### get({uri,resolveWithFullResponse,encoding,headers,query,data , timeout})
 
-
-### get({url,resolveWithFullResponse,encoding,headers,query,data , timeout})
-
-* url : get requset url.
+* uri : get requset url.
 * resolveWithFullResponse : only return success or error data if `resolveWithFullResponse = false`. default `false`.
-* encoding : response encode. default `utf-8`.
 * headers : request header.
 * query : url query data , type : Object.
 * data : null.
 * timeout: number | 15000.
 
-### get(url)
+### get(uri)
 
-### post({url,resolveWithFullResponse,encoding,headers,query,data,timeout})
+### post({uri,resolveWithFullResponse,encoding,headers,query,data,timeout})
 
-* url : post requset url.
+* uri : post requset url.
 * resolveWithFullResponse : only return success or error data if `resolveWithFullResponse = false`. default `false`.
-* encoding : response encode. default `utf-8`.
 * headers : request header.
 * query : url query data , type : Object.
 * data : post's data , type : Object.
