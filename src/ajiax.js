@@ -83,7 +83,11 @@ function setCommonOptions( options , method = 'get' , headers = {} ) {
     options.headers = Object.assign({} , headers , options.headers);
     
     if ( method === 'post' ){
-        options.body = JSON.stringify(options.body);
+        if ( options.headers['Content-Type'] !== 'application/json' ){
+            options.body = querystring.stringify(options.body);
+        }else {
+            options.body = JSON.stringify(options.body);
+        }
         options.headers['Content-Length'] = Buffer.byteLength(options.body);
     }
     return options;
