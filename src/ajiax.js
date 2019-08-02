@@ -6,8 +6,6 @@ const https = require('https');
 const { URL } = require('url');
 const querystring = require('querystring');
 
-const REQUEST_TIMEOUT = 15 * 1000;
-
 /**
  * [getHostInformation 获取对应url数据信息]
  * @param  {String} sourceUri [description]
@@ -62,7 +60,7 @@ function getMergeOptions( options = {} ) {
     query = Object.assign({} , uris.query , options.query);
     
     let headers = options.headers || {};
-    let timeout = options.timeout || REQUEST_TIMEOUT;
+    let timeout = options.timeout || 0;
 
     return options = Object.assign({} , uris , {headers , resolveWithFullResponse , body , query , timeout});
 }
@@ -150,13 +148,16 @@ function requestPromise(options) {
                 return resolve(handlerResponse(res , Buffer.concat(arr , len) , options.resolveWithFullResponse));
             });
         });
-        req.setTimeout(options.timeout , ()=>{
-            let err = new Error('request timeout.');
-            err.code = 'ESOCKETTIMEDOUT';
-            err.connect = false;
-            req.abort();
-            req.emit('error', err);
-        });
+        if ( options.timeout ){
+            req.setTimeout(options.timeout , ()=>{
+                let err = new Error('request timeout.');
+                err.code = 'ESOCKETTIMEDOUT';
+                err.connect = false;
+                req.abort();
+                req.emit('error', err);
+            });
+        }
+        
         //请求出错
         req.on('error', (err) => {
             return reject(err);
