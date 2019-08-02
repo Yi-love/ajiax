@@ -17,7 +17,7 @@ ajiax.post();
 
 return `Promise`.
 
-### get({uri,resolveWithFullResponse,encoding,headers,query , timeout})
+### get({uri,resolveWithFullResponse,headers,query , timeout})
 
 * uri : get requset url.
 * resolveWithFullResponse : only return success or error data if `resolveWithFullResponse = false`. default `false`.
@@ -27,7 +27,7 @@ return `Promise`.
 
 ### get(uri)
 
-### post({uri,resolveWithFullResponse,encoding,headers,query,body,timeout})
+### post({uri,resolveWithFullResponse,headers,query,body,timeout})
 
 * uri : post requset url.
 * resolveWithFullResponse : only return success or error data if `resolveWithFullResponse = false`. default `false`.

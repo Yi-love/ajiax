@@ -45,7 +45,7 @@ function getRealPath( options ){
  * @return {[type]}         [description]
  */
 function getOptions( options ) {
-    return typeof options === 'string' ? getHostInformation(options) : getMergeOptions(options);
+    return typeof options === 'string' ? getMergeOptions({uri:options}) : getMergeOptions(options);
 }
 
 /**
